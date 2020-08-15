@@ -153,17 +153,15 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3   / will create static folder inside static_cdn_test wich is outside the project folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticproject) #in project folder create staticfiles folder and add all static on it
+    os.path.join(BASE_DIR, 'staticproject') #in project folder create staticfiles folder and add all static on it
 ]
 #MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media') #will auto created inside static_cdn_test wich is outside the project folder
 MEDIA_URL = '/media/' # django-storages
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
-
-
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+django_heroku.settings(locals())
 
 
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
-django_heroku.settings(locals())
