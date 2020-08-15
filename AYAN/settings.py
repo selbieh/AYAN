@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live cdn AWS S3   / will create static folder inside static_cdn_test wich is outside the project folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticproject') #in project folder create staticfiles folder and add all static on it
+    os.path.join(BASE_DIR, 'staticproject) #in project folder create staticfiles folder and add all static on it
 ]
 #MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media') #will auto created inside static_cdn_test wich is outside the project folder
 MEDIA_URL = '/media/' # django-storages
