@@ -14,7 +14,7 @@ class TaskViewSet (ModelViewSet):
             else:
                 return super(TaskViewSet,self).update(request, *args, **kwargs)
         if task and task.state == 'in_progress':
-            if request.data.get('title',None) ==None or request.data.get('description',None) == None:
+            if request.data.get('title',None) !=None or request.data.get('description',None) != None:
                 return Response({"error": "this task available to be link with other task only"}, status=status.HTTP_400_BAD_REQUEST)
             else:
                 return super(TaskViewSet,self).update(request, *args, **kwargs)

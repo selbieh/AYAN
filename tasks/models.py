@@ -11,7 +11,7 @@ class Task(models.Model):
         ('done', 'done'),
     )
 
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50,blank=True,null=True)
     description = models.CharField(max_length=50, blank=True)
     state = models.CharField(choices=STATES, max_length=125, default='new')
     link_to = models.ForeignKey('self', on_delete=models.CASCADE, related_name="linked_tasks", blank=True, null=True)
